@@ -25,11 +25,11 @@ elif dataset == 'flickr30k':
     for img in det_file:
         det.append(img)
 
-proposal_file = {}
+proposal_file = {} #proposal_file = {图片id:图片} 
 for img in det:
     proposal_file[img['image_id']] = img
 
-N = len(det)
+N = len(det)#det有N个数据
 dets_labels = np.zeros((N, 100, 6))
 dets_num = np.zeros((N))
 nms_num = np.zeros((N))
